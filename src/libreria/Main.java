@@ -4,15 +4,17 @@
  */
 package libreria;
 /**
- *
- * @author leonor
+ *Clase main del programa, que define un objeto Libreria que realiza varios metodos 
+ * @author Alonso
  */
 public class Main {
     /**
+     * Metodo Main
+     * Este metodo es el principal metodo de ejecución del programa
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        LibreriaAlcarazMorenoAlonso2425 miLibreriaXXX;
+        LibreriaAlcarazMorenoAlonso2425 miLibreriaAlcarazMorenoAlonso2425;
         String mLibreriaAlcarazMorenoAlonso2425;
         int stock;
         int num;
@@ -20,35 +22,46 @@ public class Main {
         double saldoActual;
         double ingreso;
         
-        miLibreriaXXX = new LibreriaAlcarazMorenoAlonso2425("Don Quijote de la Mancha", 10, 45, 120);
+        miLibreriaAlcarazMorenoAlonso2425 = new LibreriaAlcarazMorenoAlonso2425("Don Quijote de la Mancha", 10, 45, 120);
 
-        compraQuijoteAlcarazMorenoAlonso2425(miLibreriaXXX);
+        compraQuijoteAlcarazMorenoAlonso2425(miLibreriaAlcarazMorenoAlonso2425);
         
-        saldoActual = miLibreriaXXX.obtenerSaldo();
+        saldoActual = miLibreriaAlcarazMorenoAlonso2425.obtenerSaldo();
         System.out.println("El saldo al comprar el libro es de "+ saldoActual );        
-        mLibreriaAlcarazMorenoAlonso2425 = miLibreriaXXX.obtenerNombre();
-        stock = miLibreriaXXX.obtenerStock();
+        mLibreriaAlcarazMorenoAlonso2425 = miLibreriaAlcarazMorenoAlonso2425.obtenerNombre();
+        stock = miLibreriaAlcarazMorenoAlonso2425.obtenerStock();
         System.out.println("El libro "+mLibreriaAlcarazMorenoAlonso2425+" tiene un stock de "+stock+" unidades");
         
-        añadeIngresoAlcarazMorenoAlonso2425(miLibreriaXXX, "LibroVendido");
+        añadeIngresoAlcarazMorenoAlonso2425(miLibreriaAlcarazMorenoAlonso2425, "LibroVendido");
     }
-
-    private static void añadeIngresoAlcarazMorenoAlonso2425(LibreriaAlcarazMorenoAlonso2425 miLibreriaXXX, java.lang.String concepto) {
+    /**
+     * Método añadeIngresoAlcarazMorenoAlonso2425
+     * En este metodo, se va a realizar la acción de añadir la cantidad del objeto saldo en su atributo
+     * @param miLibreriaAlcarazMorenoAlonso2425 Objeto de libreria usado para añadir la cantidad del ingreso
+     * @param concepto Concepto del ingreso
+     * @throws Exception si la cantidad es negativa
+     */
+    private static void añadeIngresoAlcarazMorenoAlonso2425(LibreriaAlcarazMorenoAlonso2425 miLibreriaAlcarazMorenoAlonso2425, java.lang.String concepto) {
         double ingreso;
         double saldoActual;
         try
         {
             ingreso = 30.5;
-            miLibreriaXXX.aumentarSaldo(ingreso);
-            saldoActual = miLibreriaXXX.obtenerSaldo();
+            miLibreriaAlcarazMorenoAlonso2425.aumentarSaldo(ingreso);
+            saldoActual = miLibreriaAlcarazMorenoAlonso2425.obtenerSaldo();
             System.out.println("Tu saldo actual después de ingresar es de "+saldoActual+"€");
         } catch (Exception e)
         {
             System.out.println("Fallo al obtener el saldo al ingresar");
         }
     }
-
-    private static void compraQuijoteAlcarazMorenoAlonso2425(LibreriaAlcarazMorenoAlonso2425 miLibreriaXXX) {
+    /**
+     * Método compraQuijoteAlcarazMorenoAlonso2425
+     * En este metodo, se va a realizar la acción de comprar dos unidades del libro "Don Quijote de la Mancha"
+     * @param miLibreriaAlcarazMorenoAlonso2425  Objeto de libreria usado para pagar la cantidad de la compra 
+     * @throws Exception si el saldo de la cuenta es menor a el necesario o si el stock del libro es inferior al en numero de ejemplares comprados
+     */
+    private static void compraQuijoteAlcarazMorenoAlonso2425(LibreriaAlcarazMorenoAlonso2425 miLibreriaAlcarazMorenoAlonso2425) {
         String mLibreriaAlcarazMorenoAlonso2425;
         int num;
         double dinero;
@@ -57,11 +70,11 @@ public class Main {
         {
             mLibreriaAlcarazMorenoAlonso2425 = "Don Quijote de la Mancha";
             num = 2;    //Número de ejemplares a comprar
-            dinero = miLibreriaXXX.obtenerPrecio();
-            saldoActual = miLibreriaXXX.obtenerSaldo();
+            dinero = miLibreriaAlcarazMorenoAlonso2425.obtenerPrecio();
+            saldoActual = miLibreriaAlcarazMorenoAlonso2425.obtenerSaldo();
             System.out.println("El libro "+mLibreriaAlcarazMorenoAlonso2425+" vale "+dinero+"€");
             System.out.println("Tu saldo actual es de "+saldoActual+"€");
-            miLibreriaXXX.comprarLibro(num);
+            miLibreriaAlcarazMorenoAlonso2425.comprarLibro(num);
         } catch (Exception e)
         {
             System.out.println("Error en la compra del libro");
